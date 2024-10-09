@@ -7,6 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 5000
+# Expone el puerto que Render utiliza
+EXPOSE 10000
 
 CMD ["python3", "envio.py"]  # Cambia "app.py" al nombre de tu archivo principal

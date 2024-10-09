@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # Configuración de Twilio usando variables de entorno
 account_sid = 'AC0f09a8e2341b1769e26e7929f5b56385'
-auth_token = '8c65bc65af41536e02d7bf9c332cf01f'
+auth_token = 'b0684113ff7424ecc48f2ba0d7d2c577'
 client = Client(account_sid, auth_token)
 
 def validar_numero(celular):
@@ -37,4 +37,5 @@ def enviar_mensaje(celular, estado):
         return jsonify({"mensaje": "Error al enviar mensaje: " + str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
