@@ -6,8 +6,8 @@ import re
 app = Flask(__name__)
 
 # Configuración de Twilio usando variables de entorno
-account_sid = 'AC0f09a8e2341b1769e26e7929f5b56385'
-auth_token = 'b0684113ff7424ecc48f2ba0d7d2c577'
+account_sid = os.getenv('TWILIO_ACCOUNT_SID')
+auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
 def validar_numero(celular):
